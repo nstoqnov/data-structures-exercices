@@ -19,4 +19,21 @@ public class BinaryTree {
     public void add(int value){
         root = addRecursive(root, value);
     }
+
+    private boolean containsNodeRecursive(Node current, int value){
+        if(current == null){
+            return false;
+        }
+        if(current.value == value){
+            return true;
+        }
+        if(current.value > value){
+            return containsNodeRecursive(current.left, value);
+        }else{
+            return containsNodeRecursive(current.right, value);
+        }
+    }
+    public boolean containsNode(int value){
+        return containsNodeRecursive(root, value);
+    }
 }
