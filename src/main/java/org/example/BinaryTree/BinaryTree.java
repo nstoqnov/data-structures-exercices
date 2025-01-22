@@ -36,4 +36,18 @@ public class BinaryTree {
     public boolean containsNode(int value){
         return containsNodeRecursive(root, value);
     }
+    private Node deleteRecursion(Node current, int value){
+        if(current == null){
+            return null;
+        }
+        if(current.value = value){
+            //delete node
+        }
+        if(current.value > value){
+            current.left = deleteRecursion(current.left, value);
+        }else{
+            current.right = deleteRecursion(current.right,value);
+        }
+        return current;
+    }
 }
