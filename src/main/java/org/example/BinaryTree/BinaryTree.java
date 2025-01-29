@@ -91,4 +91,11 @@ public class BinaryTree {
             traversePreOrder(node.right);
         }
     }
+    public void traversePostOrder(Node node){
+        if(node != null){
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.println(" " + node.value);
+        }
+    }
 }
