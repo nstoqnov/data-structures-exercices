@@ -13,11 +13,7 @@ public class Main {
         bt.add(5);
         bt.add(7);
         bt.add(9);
-
-        bt.delete(9);
-        bt.delete(8);
-
-        bt.delete(4);
+        bt.traverseInOrder(bt.getRoot());
 
     }
 }

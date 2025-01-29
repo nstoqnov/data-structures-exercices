@@ -1,7 +1,11 @@
 package org.example.BinaryTree;
 
 public class BinaryTree {
-    Node root;
+    private Node root;
+
+    public Node getRoot() {
+        return root;
+    }
 
     private Node addRecursive(Node current, int value){
         if(current == null){
@@ -71,5 +75,13 @@ public class BinaryTree {
     }
     public void delete(int value) {
         root = deleteRecursive(root, value);
+    }
+
+    public void traverseInOrder(Node node){
+        if(node != null){
+            traverseInOrder(node.left);
+            System.out.println(" " + node.value);
+            traverseInOrder(node.right);
+        }
     }
 }
