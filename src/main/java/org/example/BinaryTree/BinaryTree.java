@@ -84,4 +84,11 @@ public class BinaryTree {
             traverseInOrder(node.right);
         }
     }
+    public void traversePreOrder(Node node){
+        if(node != null){
+            System.out.println(" " + node.value);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
+    }
 }
