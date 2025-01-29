@@ -1,5 +1,8 @@
 package org.example.BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
     private Node root;
 
@@ -96,6 +99,26 @@ public class BinaryTree {
             traversePostOrder(node.left);
             traversePostOrder(node.right);
             System.out.println(" " + node.value);
+        }
+    }
+    public void traverseLeverOrder(){
+        if(root == null){
+            return;
+        }
+
+        Queue<Node> nodes = new LinkedList<>();
+        nodes.add(root);
+
+        while(!nodes.isEmpty()){
+            Node node = nodes.remove();
+            System.out.println(" " + node.value);
+
+            if(node.left != null){
+                nodes.add(node.left);
+            }
+            if(node.right != null){
+                nodes.add(node.right);
+            }
         }
     }
 }
